@@ -2,19 +2,23 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <title> Allyson Short!</title>
 <header>
-  <nav>
+  <nav class="main-nav">
     <a href="https://www.linkedin.com/in/allyson-short-bb64b5/" target="blank">
       <img src="images/linkedin.png" alt="linkedin" title="linkedIn profile"/>
     </a>
     <a href="https://github.com/oneEyedBunny" target="blank">
       <img src="images/github.png" alt="github" title="github profile"/>
     </a>
-    <a href=".body-of-work">Work</a>
-    <a href=".about-me" >About</a>
-    <a href="" >Resume Download</a>
+    <span class="icon icon-menu"></span>
+    <ul>
+      <li class="tab" data-content="Work"><a href=".body-of-work" class="icon-home"> Work</a></li>
+      <li class="tab" data-content="About"><a href=".about-me" class="icon-address-book"> About</a></li>
+      <li class="tab" data-content="Resume"><a href="" class="icon-address-book"> Resume Download</a></li>
   </nav>
 </header>
 <body>
