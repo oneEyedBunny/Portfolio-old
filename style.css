@@ -1,9 +1,0 @@
-img {
-  width: 50px;
-  max-width: 100%; /* so wont exceed container*/
-}
-
-.icon-menu {
-  font-size: 120%;
-  text-align: right;
-}

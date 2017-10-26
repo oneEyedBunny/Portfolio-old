@@ -27,3 +27,9 @@ var projects = [
   tech: "Blah",
 },
 ]
+//function that shows menu when user clicks on hamburger
+$(document).ready(function() {
+  $('.icon-menu').on("click", function(){
+    $('.page-nav').toggle();
+  });
+});
