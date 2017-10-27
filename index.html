@@ -26,10 +26,31 @@
     <h1>ALLYSON SHORT! </h1>
     <h3> I'm based in the lovely Portland, OR. Stuff about me</h3>
   </div>
-  <div class="body-of-work">
+<section id="body-of-work">
+<div class="template">
+  <div>
     <h2>Project Name/Company name from data object</h2>
-    <!-- images from projects here -->
   </div>
+  <div class="carousel">
+    <img src="images/crop_swap.png"/>
+    <div class="carousel-control">
+      <button class="carousel-control-left" href="#carousel" data-slide="prev">
+        <i class="icon-chevron-left"></i>
+      </button>
+      <button class="carousel-control-right" href="#carousel" data-slide="next">
+        <i class="icon-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+  <div id="body-of-work-info">
+    <p id="github">GitHub Repo:
+      <a href="https://github.com/oneEyedBunny" target="blank"
+      class="icon-github" alt="github" title="github profile"></a>
+    </p>
+    <p id="description"></p>
+  </div>
+</div>
+</section>
   <div class="about-me">
     <h2>Hey There!</h2>
     <p>Bio info</p>
@@ -43,6 +64,7 @@
       class="icon-github" alt="github" title="github profile"></a>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="raw-data.js"></script>
   <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
