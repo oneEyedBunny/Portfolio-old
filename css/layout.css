@@ -1,0 +1,14 @@
+/* Structural items*/
+
+.icon-menu {
+  font-size: 120%;
+  float:right;
+}
+
+.page-nav {
+  position: absolute;
+  background-color: white;
+  text-align: right;
+  right: .5em;
+  display: none;
+}

@@ -6,8 +6,9 @@ $(document).ready(function() {
 });
 
 var projects=[];
+
 // constructor for my projects object
-var Projects = function (projectObject) {
+var Project = function (projectObject) {
   this.title = projectObject.title;
   this.img = projectObject.img;
   this.desc = projectObject.desc;
@@ -15,21 +16,21 @@ var Projects = function (projectObject) {
   this.tech = projectObject.tech;
 }
 
-Projects.prototype.toHtml = function(project) {
+Project.prototype.toHtml = function(project) {
   var $newProject = $('div.template').clone();
-  $newProject.find("h2").text(this.title);
-  $newProject.find('img').text(this.img);
+  $newProject.removeClass('template');//ensures the template with the data will show
+  $newProject.find('header h2').text(this.title);
+  $newProject.find('img').attr('src', this.img);
   $newProject.find('p#github').attr('href', this.gitRepo);
   $newProject.find('p#description').html(this.desc);
-
   return $newProject;
 }
 
 //function that pushes a new project object to the projects array
-// rawData.forEach(function(coconuts) {
-//   projects.push($newProject(coconuts));
-// });
-//
-// projects.forEach(function(pineapple) {
-//   $('#body-of-work').append(pineapple.toHtml());
-// });
+rawData.forEach(function(coconuts) {
+  projects.push(new Project(coconuts));
+});
+
+projects.forEach(function(pineapple) {
+  $('#body-of-work').append(pineapple.toHtml());
+});
