@@ -15,13 +15,13 @@ var Project = function (projectObject) {
   this.gitRepo = projectObject.gitRepo;
   this.tech = projectObject.tech;
 }
-
+//creating a new project object
 Project.prototype.toHtml = function(project) {
   var $newProject = $('div.template').clone();
   $newProject.removeClass('template');//ensures the template with the data will show
   $newProject.find('header h2').text(this.title);
   $newProject.find('img').attr('src', this.img);
-  $newProject.find('p#github').attr('href', this.gitRepo);
+  $newProject.find('p.github a').attr('href', this.gitRepo);
   $newProject.find('p#description').html(this.desc);
   return $newProject;
 }

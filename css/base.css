@@ -3,3 +3,8 @@
 @import url("icon.css");
 @import url("layout.css");
 @import url("theme.css");
+
+/*ensures the HTML template doesn't display as it will be show through function*/
+.template {
+  display: none;
+}
