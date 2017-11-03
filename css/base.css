@@ -1,8 +1,49 @@
 /*Base styles include setting heading sizes, default link styles, default font styles, and body backgrounds*/
 
+/* light yellow HEX: #fbefcc
+light pink HEX: #f9ccac
+peach  HEX: #f4a688
+sunset HEX: #e0876a
+dark gray: #8a8a8a
+darker gray: #5c5c5c */
+
 @import url("icon.css");
 @import url("layout.css");
 @import url("theme.css");
+
+html * {
+  font-family: 'Jura', sans-serif;
+  font-size:1em;
+  background-color: #f0e7df;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+}
+#main-nav {
+  background-color: #f9ccac;
+}
+
+#main-nav a {
+ font-size: 2em;
+ color: #5c5c5c;
+ padding:.1em;
+}
+
+head {
+  font-size: 30px;
+}
+
+ h1 {
+   font-size:5em;
+   font-weight: bolder;
+   color: #e0876a
+ }
+
+ h2 {
+   font-size:2em;
+ }
+
+ h3 {
+   font-size:1.5em;
+ }
 
 /*ensures the HTML template doesn't display as it will be show through function*/
 .template {
