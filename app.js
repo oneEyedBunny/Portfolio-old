@@ -18,11 +18,13 @@ var Project = function (projectObject) {
 //creating a new project object
 Project.prototype.toHtml = function(project) {
   var $newProject = $('div.template').clone();
+  $newProject.attr('data-bananas', this.tech);
   $newProject.removeClass('template');//ensures the template with the data will show
   $newProject.find('header h2').text(this.title);
   $newProject.find('img').attr('src', this.img);
+  $newProject.find('.tech-list').text('Technology Used: ' + this.tech.join(', '));
   $newProject.find('p.github a').attr('href', this.gitRepo);
-  $newProject.find('p#description').html(this.desc);
+  $newProject.find('p.description').html(this.desc);
   return $newProject;
 }
 
@@ -31,6 +33,7 @@ rawData.forEach(function(coconuts) {
   projects.push(new Project(coconuts));
 });
 
+//function that loops through the array and appends each article to the page
 projects.forEach(function(pineapple) {
   $('#body-of-work').append(pineapple.toHtml());
 });
