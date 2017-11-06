@@ -1,0 +1,45 @@
+/*colors, borders, radiuses, mobile, desktop
+
+/*using important because I'm experiencing some issues with live server*/
+/*#main-nav a {
+    display:inline !important;
+}*/
+
+@media only screen and (min-width: 640px) {
+#main-nav {
+  padding: 0 0 .2em 1em;
+}}
+
+/*conditions for top linkein, github*/
+@media only screen and (min-width: 640px) {
+ #main-nav a {
+   position: relative;
+   top: -1em;
+   left:.1em;
+ }}
+
+/*conditions for work,about,resume*/
+ @media only screen and (min-width: 640px) {
+  .page-nav li {
+    position: relative;
+    top: 2em;
+    left: 0px;
+    }}
+
+/*hides the hamburger when the screen expands*/
+@media only screen and (min-width: 640px) {
+.icon-menu {
+  display: none;
+}}
+
+@media only screen and (min-width: 640px) {
+.page-nav {
+  display: inline-block;
+  position: static;
+  text-align: left;
+  padding-left: 70em;
+}}
+
+li a {
+  text-decoration: none;
+}
