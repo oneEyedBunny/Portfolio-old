@@ -15,7 +15,7 @@ tech: ["JavaScript","CSS/HTML","Chart.JS"],
 },
 
 {title: "Cookie Stand App",
-img: "market-analysis-2.png",
+img: "images/market-analysis-2.png",
 desc: "BlahblahBlahblahBlahblahBlahblahBlahblah",
 gitRepo:"https://github.com/oneEyedBunny/cookie-stand",
 tech: ["JavaScript"],
