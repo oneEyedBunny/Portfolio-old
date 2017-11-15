@@ -5,8 +5,26 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jura"/>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+  <script id="handlbar-template" type= "text/x-handlebars-template">
+    <div class="projectItem" data-bananas= "{{tech}}">
+      <header>
+        <h2>{{title}}</h2>
+      </header>
+      <div class="body-of-work-info">
+        <img src="{{img}}"/>
+        <p class="tech-list">Technology Used: {{#each tech}}
+        <span>{{this}}</span>{{/each}}</p>
+        <p class="github">GitHub Repo:
+          <a href="{{gitRepo}}" target="blank"
+          class="icon-github" alt="github" title="github profile"></a>
+        </p>
+        <p class="description">{{{desc}}}</p>
+      </div>
+    </div>
+  </script>
 <title>Allyson Short</title>
+</head>
+<body>
 <header>
   <nav id="main-nav">
     <a href="https://www.linkedin.com/in/allyson-short-bb64b5/" target="blank"
@@ -15,12 +33,12 @@
     class="icon-github" alt="github" title="github profile"></a>
     <span class="icon icon-menu"></span>
     <ul class="page-nav">
-      <li data-content="Work"><a href="#" class="icon-home">Work</a></li>
-      <li data-content="About"><a href="#" class="icon-address-book">About</a></li>
+      <li data-content="Work"><a href="#body-of-work" class="icon-home">Work</a></li>
+      <li data-content="About"><a href="#about-me" class="icon-address-book">About</a></li>
       <li data-content="Resume"><a href="#" class="icon-folder-download">Resume</a></li>
+    </ul>
   </nav>
 </header>
-<body>
   <div class="welcome-page">
     <h2>-----A Creative Web Developer---- </h2>
     <h1>ALLYSON SHORT</h1>
@@ -29,26 +47,28 @@
       ....................................................................end</h3>
     <br><br><br>
   </div>
+
  <select id="tech-filter">
     <option value="">-- Filter by Technology --</option>
  </select>
+
 <section id="body-of-work">
-<div class="template projectItem">
+<!-- <div class="template projectItem">
   <header>
     <h2></h2>
   </header>
   <div class="body-of-work-info">
     <img/>
-    <p class='tech-list'></p>
+    <p class="tech-list"></p>
     <p class="github">GitHub Repo:
       <a href='' target="blank"
       class="icon-github" alt="github" title="github profile"></a>
     </p>
     <p class="description"></p>
   </div>
-</div>
+</div> -->
 </section>
-  <div class="about-me">
+  <div id="about-me">
     <h2>Hey There!</h2>
     <p>Bio info</p>
   </div>
@@ -61,6 +81,7 @@
       class="icon-github" alt="github" title="github profile"></a>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script type="text/javascript" src="raw-data.js"></script>
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="projectView.js"></script>

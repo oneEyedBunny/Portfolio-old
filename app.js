@@ -17,15 +17,17 @@ var Project = function (projectObject) {
 }
 //creating a new project object
 Project.prototype.toHtml = function(project) {
-  var $newProject = $('div.template').clone();
-  $newProject.attr('data-bananas', this.tech);
-  $newProject.removeClass('template');//ensures the template with the data will show
-  $newProject.find('header h2').text(this.title);
-  $newProject.find('img').attr('src', this.img);
-  $newProject.find('.tech-list').text('Technology Used: ' + this.tech.join(', '));
-  $newProject.find('p.github a').attr('href', this.gitRepo);
-  $newProject.find('p.description').html(this.desc);
-  return $newProject;
+  var templateFiller = Handlebars.compile($("#handlbar-template").html());
+  // var $newProject = $('div.template').clone();
+  // $newProject.attr('data-bananas', this.tech);
+  // $newProject.removeClass('template');//ensures the template with the data will show
+  // $newProject.find('header h2').text(this.title);
+  // $newProject.find('img').attr('src', this.img);
+  // $newProject.find('.tech-list').text('Technology Used: ' + this.tech.join(', '));
+  // $newProject.find('p.github a').attr('href', this.gitRepo);
+  // $newProject.find('p.description').html(this.desc);
+  // return $newProject;
+  return templateFiller(this);
 }
 
 //function that pushes a new project object to the projects array

@@ -14,8 +14,12 @@ darker gray: #5c5c5c */
 html * {
   font-family: 'Jura', sans-serif;
   font-size:1em;
+}
+
+body {
   background-color: #f0e7df;
   background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+  overflow-wrap: break-word;
 }
 #main-nav {
   background-color: #f9ccac;
@@ -27,8 +31,8 @@ html * {
  padding:.1em;
 }
 
-head {
-  font-size: 30px;
+.page-nav {
+  font-size: 1em;
 }
 
  h1 {
@@ -48,4 +52,8 @@ head {
 /*ensures the HTML template doesn't display as it will be show through function*/
 .template {
   display: none;
+}
+
+img {
+  max-width: 100%
 }
