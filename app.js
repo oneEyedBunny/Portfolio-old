@@ -3,9 +3,10 @@ $(document).ready(function() {
   $('.icon-menu').on("click", function(){
     $('.page-nav').toggle();
   });
-  
 });
-var projects=[];
+
+var projects=[]; //empty array to hold all the projects
+
 // constructor for my projects object
 var Project = function (projectObject) {
   this.title = projectObject.title;
@@ -14,6 +15,7 @@ var Project = function (projectObject) {
   this.gitRepo = projectObject.gitRepo;
   this.tech = projectObject.tech;
 }
+
 //creating a new project object
 Project.prototype.toHtml = function(project) {
   var templateFiller = Handlebars.compile($("#handlbar-template").html());
@@ -21,7 +23,7 @@ Project.prototype.toHtml = function(project) {
 }
 
  
-//function that gets the data from the server, then pushes a new project object (coconut) to the projects array. Loops through it to publish it to the body
+//function that gets the data from the server, then pushes a new project object (coconut) to the projects array. Then loops through the projects array to publish the items to the body
 var rawData = [];
 $.getJSON('/raw-data.json', function(pineapple) {
   rawData= pineapple;
