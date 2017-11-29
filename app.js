@@ -5,8 +5,6 @@ $(document).ready(function() {
   });
 });
 
-var projects=[]; //empty array to hold all the projects
-
 // constructor for my projects object
 var Project = function (projectObject) {
   this.title = projectObject.title;
@@ -16,24 +14,27 @@ var Project = function (projectObject) {
   this.tech = projectObject.tech;
 }
 
+Project.all= []; //empty array to hold all the projects
+
 //creating a new project object
 Project.prototype.toHtml = function(project) {
   var templateFiller = Handlebars.compile($("#handlbar-template").html());
   return templateFiller(this);
 }
 
- 
 //function that gets the data from the server, then pushes a new project object (coconut) to the projects array. Then loops through the projects array to publish the items to the body
-var rawData = [];
+
+Project.fetchAll = function(callback) {
 $.getJSON('/raw-data.json', function(pineapple) {
-  rawData= pineapple;
-  rawData.forEach(function(coconuts) {
-    projects.push(new Project(coconuts));
+    pineapple.forEach(function(coconuts) {
+    Project.all.push(new Project(coconuts));
    });
-   projects.forEach(function(banana) {
+   Project.all.forEach(function(banana) {
     $('#body-of-work').append(banana.toHtml());
-  });
+  }); 
+  callback()
  });
+}
 
 
 

@@ -1,12 +1,14 @@
 
 var projectView= {};
-projectView.uniqueTech= []; //array to hold the final list of tech for the drop down box
+projectView.uniqueTech= []; //empty array to hold the results of the duplicate function below
 
-//function to populate the filter with a unique set of values
+//function to populate the filter with a unique set of values from the raw data arrays
 projectView.createFilterList = function () {
-  var allTechUsed= []; //array to hold all the tech values from the merged JSON data
-  rawData.forEach(function (project) {
-    allTechUsed = $.merge(allTechUsed, project.tech); //merges 2 arrays
+  //creating an empty array to hold the values of all the merged arrays
+  var allTechUsed= [];
+
+  Project.all.forEach(function (project) {
+    allTechUsed = $.merge(allTechUsed, project.tech);
   });
   //removing duplicate values and placing only unique items in a final array
   $.each(allTechUsed, function(index, el){
@@ -15,26 +17,32 @@ projectView.createFilterList = function () {
     }
   });
 };
-// function to populate the drop down list
+
+//function to populate the filter list of items
 projectView.populateFilterList = function () {
   $.each(projectView.uniqueTech, function (index, tech) {
     $('#tech-filter').append($('<option></option>').val(tech).text(tech));
   })
 };
-//function to show what the user selects froom drop down list
+
+//function that displays projects based on what the user selected in the drop-down
 projectView.handleFilter = function () {
   $('#tech-filter').on('change', function() {
     if($(this).val()) {
       console.log($(this).val());
       $('.projectItem').hide();
       //$(`.projectItem[data*= "${$(this).val()}"]`).show(); //using template literal
-      $('.projectItem[data-bananas*="'+$(this).val()+'"]').show(); //using string contate
+      $('.projectItem[data-bananas*="'+$(this).val()+'"]').show(); //using string concate
     }
   });
 }
 
+projectView.initIndexPage = function () {
+    projectView.createFilterList();
+    projectView.populateFilterList();
+    projectView.handleFilter();
+}
+
 $(document).ready(function() {
-  projectView.createFilterList();
-  projectView.populateFilterList();
-  projectView.handleFilter();
+    Project.fetchAll(projectView.initIndexPage);
 });
