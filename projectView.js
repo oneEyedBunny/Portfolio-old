@@ -1,13 +1,12 @@
 
 var projectView= {};
-projectView.uniqueTech= [];
+projectView.uniqueTech= []; //array to hold the final list of tech for the drop down box
 
-//function to populate the filter with a unique set of values from the raw data arrays
+//function to populate the filter with a unique set of values
 projectView.createFilterList = function () {
-  //creating an empy array to hold the values of all the merged arrays
-  var allTechUsed= [];
+  var allTechUsed= []; //array to hold all the tech values from the merged JSON data
   rawData.forEach(function (project) {
-    allTechUsed = $.merge(allTechUsed, project.tech);
+    allTechUsed = $.merge(allTechUsed, project.tech); //merges 2 arrays
   });
   //removing duplicate values and placing only unique items in a final array
   $.each(allTechUsed, function(index, el){
@@ -16,13 +15,13 @@ projectView.createFilterList = function () {
     }
   });
 };
-
+// function to populate the drop down list
 projectView.populateFilterList = function () {
   $.each(projectView.uniqueTech, function (index, tech) {
     $('#tech-filter').append($('<option></option>').val(tech).text(tech));
   })
 };
-
+//function to show what the user selects froom drop down list
 projectView.handleFilter = function () {
   $('#tech-filter').on('change', function() {
     if($(this).val()) {
