@@ -6,6 +6,7 @@
     $('#tech-filter').show();
     $('#body-of-work').show();
     $('#about-me').hide();
+    $('footer').hide();
   };
 
   module.workController = workController;
@@ -20,6 +21,7 @@
     $('#tech-filter').hide();
     $('#body-of-work').hide();
     $('#about-me').show();
+    $('footer').show();
   };
 
   module.aboutController = aboutController;
