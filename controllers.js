@@ -18,6 +18,7 @@
   const aboutController = {};
 
   aboutController.index = function () {
+   repos.requestRepos(repoView.index);
     $('#tech-filter').hide();
     $('#body-of-work').hide();
     $('#about-me').show();
@@ -26,3 +27,5 @@
 
   module.aboutController = aboutController;
 })(window);
+
+

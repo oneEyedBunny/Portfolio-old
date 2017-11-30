@@ -18,7 +18,7 @@ Project.all= []; //empty array to hold all the projects
 
 //creating a new project object
 Project.prototype.toHtml = function(project) {
-  var templateFiller = Handlebars.compile($("#handlbar-template").html());
+  var templateFiller = Handlebars.compile($("#handlebar-template").html());
   return templateFiller(this);
 }
 
