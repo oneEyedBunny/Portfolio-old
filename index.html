@@ -5,7 +5,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jura"/>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script id="handlbar-template" type= "text/x-handlebars-template">
+  <script id="handlebar-template" type= "text/x-handlebars-template">
+
     <div class="projectItem" data-bananas= "{{tech}}">
       <header>
         <h2>{{title}}</h2>
@@ -18,7 +19,7 @@
           <a href="{{gitRepo}}" target="blank"
           class="icon-github" alt="github" title="github profile"></a>
         </p>
-        <p class="description">{{{desc}}}</p>
+        <p class="description">Description: {{{desc}}}</p>
       </div>
     </div>
   </script>
@@ -35,16 +36,13 @@
     <ul class="page-nav">
       <li data-content="Work"><a href="/" class="icon-home">Work</a></li>
       <li data-content="About"><a href="/about" class="icon-address-book">About</a></li>
-      <li data-content="Resume"><a href="#" class="icon-folder-download">Resume</a></li>
     </ul>
   </nav>
 </header>
   <div class="welcome-page">
     <h2>-----A Creative Web Developer---- </h2>
     <h1>ALLYSON SHORT</h1>
-    <h3>I'm based in the lovely Portland, OR. Stuff about me....................
-      ..........................................................................
-      ....................................................................end</h3>
+    <h3>I'm based in the lovely Portland, OR. I'm currently in coding bootcamp learning all about a variety of technologies.</h3>
     <br><br><br>
   </div>
 
@@ -55,8 +53,12 @@
 <section id="body-of-work">
 </section>
   <div id="about-me">
-    <h2>Hey There!</h2>
-    <p>Bio info</p>
+    <h2>Here is a list of all my GitHUB repositories:</h2>
+    <ul class="git-names">
+    </ul>
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>{{name}}</li>
+  </script>
   </div>
   <footer>
     <h4> Lets get in touch!</h4>
@@ -69,10 +71,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script type="text/javascript" src="app.js"></script>
-  <script type="text/javascript" src="projectView.js"></script>
-  <script type="text/javascript" src="controllers.js"></script>
-  <script type="text/javascript" src="routes.js"></script>
+
+  <script src="/githubToken.js"></script>
+  <script src="/scripts/models/repo.js"></script>
+
+  <script type="text/javascript" src="scripts/models/app.js"></script>
+  <script type="text/javascript" src="scripts/views/projectView.js"></script>
+  <script type="text/javascript" src="scripts/controllers/controllers.js"></script>
+  <script type="text/javascript" src="scripts/controllers/routes.js"></script>
 
 </body>
 </html>
