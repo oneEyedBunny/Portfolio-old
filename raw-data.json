@@ -1,21 +1,21 @@
 [
     {"title": "Crop Swap",
     "img": "images/crop_swap.png",
-    "desc": "BlahblahBlahblahBlahblahBlahblahBlahblahBlahblah",
+    "desc": "This innovative group is helping bring Portland together to exchange their excess fruits/veggies from their gardens. I worked with a team to build their website from the ground up including all design elements (logo, color schemes, etc)",
     "gitRepo":"https://github.com/oneEyedBunny/Crop-Swap",
     "tech": ["JavaScript","CSS/HTML"]
     },
     
     {"title": "Market Analysis App",
     "img": "images/market-analysis-1.png",
-    "desc": "BlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblah",
+    "desc": "I helped XYZ company develop a survey for their next marketing campaign. I used a 3rd party API to display the result in chart format for their business analitics team.",
     "gitRepo":"https://github.com/oneEyedBunny/market-analysis-app",
     "tech": ["JavaScript","CSS/HTML","Chart.JS"]
     },
     
     {"title": "Cookie Stand App",
     "img": "images/market-analysis-2.png",
-    "desc": "BlahblahBlahblahBlahblahBlahblahBlahblah",
+    "desc": "I created an interface for Pamela's Cookies to analyze and create their production data for her 4 store locations. This interactive website allows her to update her various data inputs and recieved the updated production values real time from her computer or other mobile devise.",
     "gitRepo":"https://github.com/oneEyedBunny/cookie-stand",
     "tech": ["JavaScript"]
     }
